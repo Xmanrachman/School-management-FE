@@ -1,2 +1,71 @@
-<p>students works!</p>
-  
+<div class="divForm">
+<form class="example-form">
+  <mat-card appearance="outlined">
+    <mat-card-content>
+        <div class="example-label">Name :</div>
+        <mat-form-field class="example-full-width"> 
+          <mat-label>Name Student</mat-label>
+          <input type="text" matInput placeholder="First name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input type="text" matInput placeholder="Last name">
+        </mat-form-field>
+      <div class="example-label">Nomor Induk Mahasiswa</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>NIM</mat-label>
+          <input type="text" matInput placeholder="NIM">
+        </mat-form-field>
+        <div class="example-label">Gender</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Gender</mat-label>
+                <mat-select>
+                  <mat-option value="Pria">Pria</mat-option>
+                  <mat-option value="wanita">Wanita</mat-option>
+                </mat-select>
+              </mat-form-field>
+          <div class="example-label">Place Of Birth</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Place Of Birth</mat-label>
+                <input type="text" matInput placeholder="Tempat Lahir">
+            </mat-form-field>
+          
+            <div class="example-label">Date of Birth</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Date of Birth</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <div class="example-label">Age</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Age</mat-label>
+                <input type="number" matInput placeholder="Age">
+            </mat-form-field>
+            <div class="example-label">Email</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                 placeholder="Ex. pat@example.com">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+                <mat-error>Please enter a valid email address</mat-error>
+                }
+                @if (emailFormControl.hasError('required')) {
+                <mat-error>Email is <strong>required</strong></mat-error>
+                }
+            </mat-form-field>
+            <br>
+            <mat-slide-toggle>mat-slide-toggle</mat-slide-toggle>
+            <br>
+            <br>
+              <div class="example-button-row">
+                <button mat-raised-button type="submit" id="submit_student">Submit</button>
+            
+              <button mat-raised-button type="reset" id="reset_student">Reset</button>
+            </div>
+          </mat-card-content>
+          </mat-card>
+</form>
+</div>

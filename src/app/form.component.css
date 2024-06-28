@@ -1,0 +1,42 @@
+.example-form {
+    min-width: 150px;
+    max-width: 800px;
+    border: 10px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width:500px;
+    
+  }
+  .example-label {
+    font-size: 14px;
+    margin-left: 0px;
+    min-width: 120px;
+  }
+  .example-button-row button,
+  .example-button-row a {
+    margin-right: 8px;
+    background-color: red;
+    width: 180px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+   
+  }
+  .divForm {
+    border: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+  
+  }
+ 
+  

@@ -1,2 +1,155 @@
-<p>students works!</p>
-  
+<mat-expansion-panel [expanded]="step() === 0" (opened)="setStep(0)" hideToggle>
+  <div class="divForm" id="idDivFormStudents">
+    <form class="example-form">
+      <mat-expansion-panel
+        [expanded]="step() === 0"
+        (opened)="setStep(0)"
+        hideToggle
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Field Student </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="example-label">Name</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Name Student</mat-label>
+          <input type="text" matInput placeholder="First name" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input type="text" matInput placeholder="Last name" />
+        </mat-form-field>
+        <div class="example-label">Nomor Induk Mahasiswa</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>NIM</mat-label>
+          <input type="text" matInput placeholder="NIM" />
+        </mat-form-field>
+        <div class="example-label">Gender</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Gender</mat-label>
+          <mat-select>
+            <mat-option value="Pria">Pria</mat-option>
+            <mat-option value="wanita">Wanita</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="example-label">Place Of Birth</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Place Of Birth</mat-label>
+          <input type="text" matInput placeholder="Tempat Lahir" />
+        </mat-form-field>
+        <div class="example-label">Date of Birth</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Date of Birth</mat-label>
+          <input matInput [matDatepicker]="picker" placeholder="MM/DD/YYYY" />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div class="example-label">Age</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Age</mat-label>
+          <input type="number" matInput placeholder="Age" />
+        </mat-form-field>
+      </mat-expansion-panel>
+      <mat-expansion-panel
+        [expanded]="step() === 0"
+        (opened)="setStep(0)"
+        hideToggle
+      >
+        <mat-expansion-panel-header>
+          <mat-panel-title>Information Of Address </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="example-label">State</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>State</mat-label>
+          <input type="text" matInput placeholder="State" />
+        </mat-form-field>
+        <div class="example-label">City</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>City</mat-label>
+          <input type="text" matInput placeholder="City" />
+        </mat-form-field>
+        <div class="example-label">Country</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Country</mat-label>
+          <input type="text" matInput placeholder="Country" />
+        </mat-form-field>
+        <div class="example-label">District</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>District</mat-label>
+          <input type="text" matInput placeholder="District" />
+        </mat-form-field>
+        <div class="example-label">Neighborhoods</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Neighborhoods</mat-label>
+          <input type="text" matInput placeholder="Neighborhoods" />
+        </mat-form-field>
+
+        <div class="example-label">Addres</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Address</mat-label>
+          <textarea type="text" matInput placeholder="Address"></textarea>
+        </mat-form-field>
+
+        <div class="example-label">Number RW</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Number RW</mat-label>
+          <input type="text" matInput placeholder="Number RW" />
+        </mat-form-field>
+        <div class="example-label">Number RT</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Number RT</mat-label>
+          <input type="text" matInput placeholder="Number RT" />
+        </mat-form-field>
+        <div class="example-label">Number Home</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Number Home</mat-label>
+          <input type="text" matInput placeholder="Number Home" />
+        </mat-form-field>
+
+        <div class="example-label">Phone</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Phone</mat-label>
+          <input type="text" matInput placeholder="Phone" />
+        </mat-form-field>
+        <div class="example-label">Postal Code</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Postal Code</mat-label>
+          <input type="text" matInput placeholder="Postal Code" />
+        </mat-form-field>
+
+        <div class="example-label">Email</div>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            [formControl]="emailFormControl"
+            [errorStateMatcher]="matcher"
+            placeholder="Ex. pat@example.com"
+          />
+          <mat-hint>Errors appear instantly!</mat-hint>
+          @if (emailFormControl.hasError('email') &&
+          !emailFormControl.hasError('required')) {
+          <mat-error>Please enter a valid email address</mat-error>
+          } @if (emailFormControl.hasError('required')) {
+          <mat-error>Email is <strong>required</strong></mat-error>
+          }
+        </mat-form-field>
+      </mat-expansion-panel>
+      <br />
+      <mat-slide-toggle>mat-slide-toggle</mat-slide-toggle>
+      <br />
+      <br />
+      <div class="example-button-row">
+        <button mat-raised-button type="submit" id="submit_student">
+          Submit
+        </button>
+
+        <button mat-raised-button type="reset" id="reset_student">Reset</button>
+      </div>
+    </form>
+  </div>
+</mat-expansion-panel>

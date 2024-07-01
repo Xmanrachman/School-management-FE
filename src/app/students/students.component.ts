@@ -28,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { Studentsinterface } from './studentsinterface';
+import { NavigationEnd, Router } from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -81,5 +82,22 @@ export class StudentsComponent {
   step = signal(0);
   setStep(index: number) {
     this.step.set(index);
+  }
+
+  idDivListStudents: boolean = true;
+  idDivFormStudents: boolean = false;
+  constructor(private routerInject: Router) {
+    this.routerInject.events.subscribe((val) => {});
+  }
+
+  resetForm() {
+    this.idDivListStudents = true;
+    this.idDivFormStudents = false;
+    this.routerInject.navigate(['grid-students-page']);
+  }
+
+  submitForm() {
+    //dialog succesfly saving
+    //post to api use json format
   }
 }

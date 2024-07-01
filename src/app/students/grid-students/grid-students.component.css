@@ -2,7 +2,7 @@ table {
   width: 100%;
 }
 .matHeaderCell {
-  background-color: #ee4848;
+  background-color: hsl(0, 2%, 78%);
 }
 .example-button-row button,
 .example-button-row a {

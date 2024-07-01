@@ -9,56 +9,64 @@
 
       <!-- firstName Column -->
       <ng-container matColumnDef="firstName">
-        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">
+          First Name
+        </th>
         <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
       </ng-container>
 
       <!-- lastName Column -->
       <ng-container matColumnDef="lastName">
-        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">
+          Last Name
+        </th>
         <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
       </ng-container>
 
       <!-- nim Column -->
       <ng-container matColumnDef="nim">
-        <th mat-header-cell *matHeaderCellDef>NIM</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">NIM</th>
         <td mat-cell *matCellDef="let element">{{ element.nim }}</td>
       </ng-container>
 
       <!--  Gender Column -->
       <ng-container matColumnDef="gender">
-        <th mat-header-cell *matHeaderCellDef>Gender</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">Gender</th>
         <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
       </ng-container>
 
       <!-- Place of Birth Column -->
       <ng-container matColumnDef="placeOfBirth">
-        <th mat-header-cell *matHeaderCellDef>Place Of Birth</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">
+          Place Of Birth
+        </th>
         <td mat-cell *matCellDef="let element">{{ element.placeOfBirth }}</td>
       </ng-container>
 
       <!-- date of Birth Column -->
       <ng-container matColumnDef="dateOfBirth">
-        <th mat-header-cell *matHeaderCellDef>Date Of Birth</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">
+          Date Of Birth
+        </th>
         <td mat-cell *matCellDef="let element">{{ element.dateOfBirth }}</td>
       </ng-container>
 
       <!-- age Column -->
       <ng-container matColumnDef="age">
-        <th mat-header-cell *matHeaderCellDef>Age</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">Age</th>
         <td mat-cell *matCellDef="let element">{{ element.age }}</td>
       </ng-container>
 
       <!-- email Column -->
       <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">Email</th>
         <td mat-cell *matCellDef="let element">{{ element.email }}</td>
       </ng-container>
       <!-- Add button in Column -->
       <ng-container matColumnDef="Add">
-        <th mat-header-cell *matHeaderCellDef>
+        <th mat-header-cell *matHeaderCellDef class="matHeaderCell">
           <div class="example-button-row">
-            <button mat-raised-button type="button" (onClick)="addStudent()">
+            <button mat-raised-button type="button" (click)="addStudent()">
               Add
             </button>
           </div>

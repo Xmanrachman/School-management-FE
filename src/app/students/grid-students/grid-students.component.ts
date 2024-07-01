@@ -19,6 +19,8 @@ import { GridStudentsInterface } from './grid-students-interface';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
+import routes from '../../app.routes';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-grid-students',
@@ -72,17 +74,17 @@ export class GridStudentsComponent implements AfterViewInit {
    */
   idDivListStudents: boolean = true;
   idDivFormStudents: boolean = false;
-  addStudent() {
-    if (this.idDivListStudents == true) {
-      this.idDivListStudents = false;
-      this.idDivFormStudents = true;
-      path: 'students-page';
-    } else {
-      this.idDivListStudents = true;
-      this.idDivFormStudents = false;
-    }
-    return this.idDivListStudents;
+  constructor(private routerInject: Router) {
+    this.routerInject.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+      }
+    });
   }
+  addStudent() {
+    this.idDivFormStudents = true;
+    this.routerInject.navigate(['students-page']);
+  }
+
   /** Control for the selected animal and dialog function. */
   readonly animal = signal('');
   readonly firstName = model('');
@@ -101,6 +103,7 @@ export class GridStudentsComponent implements AfterViewInit {
     });
   }
 }
+
 /** Data dummy for table */
 const ELEMENT_DATA: GridStudentsInterface[] = [
   {
